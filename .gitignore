@@ -1,0 +1,9 @@
+env
+__pycache__
+db.sqlite
+PreciosLista_TV.csv
+productos_con_descuento.csv
+prueba.py
+prueba2.py
+septiembre-1-15.csv
+descuentos.py

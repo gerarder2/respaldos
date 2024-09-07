@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='{% static "css/index.css" %}' rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respaldo URL</title>
+</head>
+<body>
+    <div class="plantilla">
+        <h1 class="roboto-medium titulo">Reespaldo de URLS</h1>
+        <div class="formulario">
+            <form method="post" class="container">
+                {% csrf_token %}
+                <label id="labelForm" style="color: white;" for="jobId" class="roboto-medium">JobStatusId</label>
+                <input type="text" id="jobId" name="jobId" class="inputNumber">
+                <button class="guardar" type="submit" onclick=>GUARDAR</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
