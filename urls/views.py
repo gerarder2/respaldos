@@ -16,18 +16,22 @@ def home(request):
             os.remove(ruta_temp)
         except:
             print("No existe el respaldo")
-        jobId = request.POST['jobId']
-        generarArchivo1(jobId)
-        generarArchivo2()
-        generarArchivo3()
-        response = crear_zip()
-        os.remove("urls/urls/data/jobStatusId.json")
-        os.remove("urls/urls/data/jobStatusId.txt")
-        os.remove("urls/urls/data/size.json")
-        os.remove("urls/urls/data/size.txt")
-        os.remove("urls/urls/data/totalDocs.json")
-        os.remove("urls/urls/data/totalDocs.txt")
-        return response
+        
+        try:
+            jobId = request.POST['jobId']
+            generarArchivo1(jobId)
+            generarArchivo2()
+            generarArchivo3()
+            response = crear_zip()
+            os.remove("urls/urls/data/jobStatusId.json")
+            os.remove("urls/urls/data/jobStatusId.txt")
+            os.remove("urls/urls/data/size.json")
+            os.remove("urls/urls/data/size.txt")
+            os.remove("urls/urls/data/totalDocs.json")
+            os.remove("urls/urls/data/totalDocs.txt")
+            return response
+        except:
+            print("Error al generar archivos.")
     else:
          return render(request, 'urls/home.html')
 
